@@ -1,21 +1,20 @@
-# 🌐 **My Website Project**
+# 🌐 **Local Storage and Session Storage - Website**
 
-Welcome to my website project, where creativity meets functionality!  
+Welcome to a project that highlights the differences and uses of Local Storage and Session Storage in web development.
 
 ### 🔗 **Website Link**  
-Discover the website here:  
-[👉 Explore My Website](https://omvijaysharma.github.io/window-data/)  
+Access the live project here:  
+[👉 View the Project](https://omvijaysharma.github.io/window-data/)  
 
 ---
 
 ### 📜 **About**  
-This project is a reflection of my skills, creativity, and passion for web development. Dive in and explore the design, features, and functionality that make this project stand out.  
+This project focuses on demonstrating how Local Storage and Session Storage work in modern web applications. Learn how to store, retrieve, and manage data efficiently on the client side.
 
-### 📂 **Repository Highlights**  
-- **Core Technologies**: HTML, CSS, and JavaScript for a seamless experience  
-- **Design Assets**: Carefully crafted visuals and resources for a polished look  
-- **Interactive Features**: Dynamic components to enhance user engagement  
+### 📂 **Key Features**  
+- **Local Storage**: Persistent data storage that remains even after the browser is closed.  
+- **Session Storage**: Temporary data storage cleared when the browser tab is closed.  
 
 ---
 
-Thank you for taking the time to visit my project!
+Thank you for exploring this project!
