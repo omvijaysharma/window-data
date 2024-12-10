@@ -1,21 +1,20 @@
-# 🌐 **My Website Project**
+<h1>🌐 My Website Project</h1>
 
-Welcome to my website project, where creativity meets functionality!  
+<p>Welcome to my website project! Check out the link below to explore:</p>
 
-### 🔗 **Website Link**  
-Discover the website here:  
-[👉 Explore My Website](https://omvijaysharma.github.io/window-data/)  
+<a href="https://your-website-link.com" target="_blank" style="font-size:18px; color:blue; text-decoration:none;">👉 Visit My Website</a>
 
----
+<hr>
 
-### 📜 **About**  
-This project is a reflection of my skills, creativity, and passion for web development. Dive in and explore the design, features, and functionality that make this project stand out.  
+<h2>📜 About</h2>
+<p>This project showcases my skills in web development. Feel free to explore!</p>
 
-### 📂 **Repository Highlights**  
-- **Core Technologies**: HTML, CSS, and JavaScript for a seamless experience  
-- **Design Assets**: Carefully crafted visuals and resources for a polished look  
-- **Interactive Features**: Dynamic components to enhance user engagement  
+<h2>📂 Repository Contents</h2>
+<ul>
+  <li>HTML, CSS, and JavaScript files</li>
+  <li>Assets for design and functionality</li>
+</ul>
 
----
+<hr>
 
-Thank you for taking the time to visit my project!
+<p>Thank you for visiting! 😊</p>
