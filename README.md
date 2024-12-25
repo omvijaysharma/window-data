@@ -1,4 +1,4 @@
-# 🌐 **Local Storage and Session Storage show of your browser - Website**
+# 🌐 **Local Storage and Session Storage show and add of your browser - Website**
 
 Welcome to a project that highlights the differences and uses of Local Storage and Session Storage in web development.
 
