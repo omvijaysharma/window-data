@@ -56,7 +56,6 @@
     <a href="https://www.github.com/omvijaysharma" target="_blank">
         <button>DEVELOPER</button>
     </a>
-    <button id="copyButton">Copy single html code </button>
 
     <!-- Form to add data -->
     <div class="container">
@@ -156,23 +155,6 @@
 
         // On window load, display storage data
         window.onload = displayStorage;
-
-        // Function to copy content of single.txt to clipboard
-        document.getElementById("copyButton").addEventListener("click", async function() {
-            try {
-                // Fetching the content of single.txt file
-                const response = await fetch("single.txt");
-                if (!response.ok) throw new Error("File not found");
-                const text = await response.text();
-
-                // Copying text to clipboard
-                await navigator.clipboard.writeText(text);
-                alert("Content copied to clipboard!");
-            } catch (error) {
-                console.error("Error copying content:", error);
-                alert("Failed to copy content. Please check console for details.");
-            }
-        });
     </script>
 </body>
 </html>
