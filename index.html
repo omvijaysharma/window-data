@@ -11,7 +11,25 @@
     <a href="https://www.github.com/omvijaysharma" target="_blank">
         <button>DEVELOPER</button>
     </a>
-    <button id="copyButton">Copy single html code </button>
+    <button id="copyButton">Copy single.html code</button>
+
+    <!-- Form to add data -->
+    <div class="container">
+        <h2>Add Data</h2>
+        <div>
+            <label for="storageKey">Key:</label>
+            <input type="text" id="storageKey" placeholder="Enter key">
+        </div>
+        <div>
+            <label for="storageValue">Value:</label>
+            <input type="text" id="storageValue" placeholder="Enter value">
+        </div>
+        <div>
+            <button id="saveLocal">Local</button>
+            <button id="saveSession">Session</button>
+        </div>
+    </div>
+
     <div class="container">
         <h2>Local Storage</h2>
         <div id="localStorageData"></div>
@@ -20,6 +38,7 @@
         <h2>Session Storage</h2>
         <div id="sessionStorageData"></div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
