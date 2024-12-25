@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storage Viewer</title>
+    <title>Storage Viewer & File Copier</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             background-color: #ffcc00;
         }
         .container {
-            margin-bottom: 20px;
-        }
-        #localStorageData, #sessionStorageData {
+            margin: 10px;
             border: 3px solid #000;
             padding: 10px;
             border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+        }
+        .container div {
+        margin-bottom: 5px; 
         }
         .storage-item {
             margin: 5px 0;
@@ -38,6 +40,7 @@
             display: inline-block;
             transition: all 0.2s;
             box-shadow: 4px 4px 0px #000;
+            margin: 5px; 
         }
         button:active {
             box-shadow: 0px 0px 0px #000;
@@ -53,6 +56,27 @@
     <a href="https://www.github.com/omvijaysharma" target="_blank">
         <button>DEVELOPER</button>
     </a>
+    <button id="copyButton">Copy single html code </button>
+
+    <!-- Form to add data -->
+    <div class="container">
+        <h2>Add Data</h2>
+        <div>
+        <label for="storageKey">Key:</label>
+        <input type="text" id="storageKey" placeholder="Enter key">
+        </div>
+        
+        <div>
+        <label for="storageValue">Value:</label>
+        <input type="text" id="storageValue" placeholder="Enter value">
+        </div>
+        
+        <div>
+        <button id="saveLocal">Local</button>
+        <button id="saveSession">Session</button>
+        </div>
+    </div>
+
     <div class="container">
         <h2>Local Storage</h2>
         <div id="localStorageData"></div>
@@ -61,6 +85,7 @@
         <h2>Session Storage</h2>
         <div id="sessionStorageData"></div>
     </div>
+
     <script>
         // Function to display storage data
         function displayStorage() {
@@ -104,8 +129,50 @@
             displayStorage();
         }
 
+        // Function to save data to storage
+        function saveToStorage(type) {
+            const key = document.getElementById("storageKey").value;
+            const value = document.getElementById("storageValue").value;
+
+            if (!key || !value) {
+                alert("Please enter both key and value.");
+                return;
+            }
+
+            if (type === "local") {
+                localStorage.setItem(key, value);
+            } else if (type === "session") {
+                sessionStorage.setItem(key, value);
+            }
+
+            document.getElementById("storageKey").value = "";
+            document.getElementById("storageValue").value = "";
+            displayStorage();
+        }
+
+        // Add event listeners for save buttons
+        document.getElementById("saveLocal").addEventListener("click", () => saveToStorage("local"));
+        document.getElementById("saveSession").addEventListener("click", () => saveToStorage("session"));
+
         // On window load, display storage data
         window.onload = displayStorage;
+
+        // Function to copy content of single.txt to clipboard
+        document.getElementById("copyButton").addEventListener("click", async function() {
+            try {
+                // Fetching the content of single.txt file
+                const response = await fetch("single.txt");
+                if (!response.ok) throw new Error("File not found");
+                const text = await response.text();
+
+                // Copying text to clipboard
+                await navigator.clipboard.writeText(text);
+                alert("Content copied to clipboard!");
+            } catch (error) {
+                console.error("Error copying content:", error);
+                alert("Failed to copy content. Please check console for details.");
+            }
+        });
     </script>
 </body>
 </html>
