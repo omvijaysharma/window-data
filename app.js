@@ -40,11 +40,36 @@ function removeItem(type, key) {
     displayStorage();
 }
 
+// Function to save data to storage
+function saveToStorage(type) {
+    const key = document.getElementById("storageKey").value;
+    const value = document.getElementById("storageValue").value;
+
+    if (!key || !value) {
+        alert("Please enter both key and value.");
+        return;
+    }
+
+    if (type === "local") {
+        localStorage.setItem(key, value);
+    } else if (type === "session") {
+        sessionStorage.setItem(key, value);
+    }
+
+    document.getElementById("storageKey").value = "";
+    document.getElementById("storageValue").value = "";
+    displayStorage();
+}
+
+// Add event listeners for save buttons
+document.getElementById("saveLocal").addEventListener("click", () => saveToStorage("local"));
+document.getElementById("saveSession").addEventListener("click", () => saveToStorage("session"));
+
 // On window load, display storage data
 window.onload = displayStorage;
 
 // Function to copy content of single.txt to clipboard
-document.getElementById("copyButton").addEventListener("click", async function () {
+document.getElementById("copyButton").addEventListener("click", async function() {
     try {
         // Fetching the content of single.txt file
         const response = await fetch("single.txt");
