@@ -3,42 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storage Viewer & File Copier</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Data Manager</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS -->
 </head>
 <body>
-    <h1>Storage Data Viewer</h1>
+    <h1>Data Viewer & Manager</h1>
     <a href="https://www.github.com/omvijaysharma" target="_blank">
         <button>DEVELOPER</button>
     </a>
-    <button id="copyButton">Copy single.html code</button>
 
-    <!-- Form to add data -->
+    <!-- Copy Single HTML Code Button -->
+    <button onclick="copyFileContent()">Copy Single HTML Code</button>
+    <br><br>
+
+    <!-- LocalStorage Section -->
     <div class="container">
-        <h2>Add Data</h2>
-        <div>
-            <label for="storageKey">Key:</label>
-            <input type="text" id="storageKey" placeholder="Enter key">
-        </div>
-        <div>
-            <label for="storageValue">Value:</label>
-            <input type="text" id="storageValue" placeholder="Enter value">
-        </div>
-        <div>
-            <button id="saveLocal">Local</button>
-            <button id="saveSession">Session</button>
-        </div>
+        <h3>Local Storage:</h3>
+        <input type="text" id="localKey" placeholder="Key">
+        <input type="text" id="localValue" placeholder="Value">
+        <button onclick="addLocalStorage()">Add</button>
+        <ul id="localStorageData"></ul>
     </div>
 
+    <!-- SessionStorage Section -->
     <div class="container">
-        <h2>Local Storage</h2>
-        <div id="localStorageData"></div>
-    </div>
-    <div class="container">
-        <h2>Session Storage</h2>
-        <div id="sessionStorageData"></div>
+        <h3>Session Storage:</h3>
+        <input type="text" id="sessionKey" placeholder="Key">
+        <input type="text" id="sessionValue" placeholder="Value">
+        <button onclick="addSessionStorage()">Add</button>
+        <ul id="sessionStorageData"></ul>
     </div>
 
-    <script src="app.js"></script>
+    <!-- Cookies Section -->
+    <div class="container">
+        <h3>Cookies:</h3>
+        <input type="text" id="cookieKey" placeholder="Key">
+        <input type="text" id="cookieValue" placeholder="Value">
+        <button onclick="addCookie()">Add</button>
+        <ul id="cookiesData"></ul>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to the external JS file -->
 </body>
 </html>
