@@ -15,9 +15,7 @@ ul {
     padding: 0;
 }
 
-li {
-    margin: 5px 0;
-}
+li { margin: 5px 0; }
 
 button {
     background-color: #ffcc00;
